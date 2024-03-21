@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MQELA FOOD</title>
+    <link rel="icon" href="images/logo-head.png" >
     <!-- bootstrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -18,6 +19,92 @@
 </head>
 
 <body>
+ <!-- NavBar -->
+        <nav class="navbar fixed-top navbar-expand-lg py-0" style="height: 45px;">
+            <div class="container">
+                <img class="navbar-brand me-auto" style="width: 80px" src="images/logo-black-food.png">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">WELCOME TO MQELA FOOD</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark mx-lg-2 mx-4" aria-current="page" href="#">Menu</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle mx-lg-2 mx-4 text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Recipes
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Add recipe</a></li>
+                                    <li><a class="dropdown-item" href="#">Must popular</a></li>
+                                    <li><a class="dropdown-item" href="#">Must rated</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark mx-lg-2 mx-4" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark mx-lg-2 mx-4" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button href="" class="login-button bg-dark text-light border border-0 px-3 py-2 rounded mx-4">Login</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+<!-- Slides Home -->
+<section class="container d-flex justify-content-between">
+    <div class="menu-search d-flex justify-content-start flex-column mt-4 mx-5 bg-dark w-25 gy-5" style="height: 95vh;">
+        <div class="messageBox">
+            <input required="" placeholder="Search recipe..." type="text" id="messageInput" />
+            <button id="sendButton">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                <path
+                  fill="none"
+                  d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="33.67"
+                  stroke="#6c6c6c"
+                  d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        <h1 class="title text-light text-center mb-4">Luxary</h1>
+        <img class="img-slide" src="images/images/dish/2.png" alt="">
+    </div>
+    <div class="home-desc f-flex flex-column mx-5 my-5 text-center">
+        <h3 class="mt-4">Discover exquisite recipes fit for royalty.</h3>
+        <h4 class="mt-4">Indulge in culinary creations that combine <br>opulence with unforgettable flavors. </h4>
+        <h4 class="mt-4">Elevate your dining experience with our <br>luxurious dishes that embody sophistication <br> decadence.</h4>
+        <div class="d-flex flex-row">
+            <img class="mx-4 mt-5" style="width: 150px; height: 150px;" src="images/images/dish/6.png" alt="">
+            <img class="mx-4 mt-5" style="width: 150px; height: 150px;" src="images/images/dish/4.png" alt="">
+            <img class="mx-4 mt-5" style="width: 150px; height: 150px;" src="images/images/dish/3.png" alt="">
+        </div>
+    </div>
+</section>
+<!-- Slides Home -->
+    
+        <!-- JavaScript Link -->
+        <script src="script.js"></script>
+        <!-- JavaScript Link -->
+    
+        <!-- bootstrap js link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <!-- bootstrap js link -->
+    </body>
 
     <div class="container mt-4">
         <h1 class="title title-top text-center m-5 ">Our Recipe</h1>
