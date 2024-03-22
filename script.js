@@ -65,14 +65,14 @@ function luxary(){
     title.innerText="Luxary"
     desc1.innerText="Discover exquisite recipes crafted for royalty's refined palate."
     desc2.innerText="Indulge in culinary creations that combine opulence with unforgettable flavors. "
-    desc3.innerText="Elevate your dining experience with our luxurious dishes that embody sophistication decadence." 
+    desc3.innerText="Elevate your dining experience with our luxurious dishes that embody sophistication decadence."
 }
 
 function delicious(){
     title.innerText="Delicious"
     desc1.innerText="Dive into a paradise of delightful flavors and culinary delights."
     desc2.innerText="Our delicious recipes are a celebration of taste and pleasure, offering a symphony of aromas and textures that will leave you craving for more."
-    desc3.innerText="Experience pure gastronomic joy with every bite." 
+    desc3.innerText="Experience pure gastronomic joy with every bite."
 }
 
 // let ArryRecipes = [
@@ -166,36 +166,4 @@ function likesCount(element){
     let likeCountSpan = element.querySelector('.like-count');
     let currentLikes = parseInt(likeCountSpan.textContent);
     likeCountSpan.textContent = currentLikes + 1;
-}
-
-function commentsCount(element){
-    let commentCountSpan = element.querySelector('.comment-count');
-    let currentComments = parseInt(commentCountSpan.textContent);
-    commentCountSpan.textContent = currentComments + 1;
-}
-
-
-
-let img=document.getElementById("img-recette")
-let titlerecette=document.getElementById("title-recette")
-let descriptionR=document.getElementById("descr-recette")
-
-function addCards(){
-
-    const card={
-        photo: img.files.length > 0 ? URL.createObjectURL(img.files[0]) : '',
-        title:titlerecette.value,
-        description: descriptionR.value
-    }
-    ArryRecipes.push(card)
-}
-document.getElementById("send").onclick = function(){
-    // document.getElementById("cont-card").innerHTML ="";
-
-    img.onchange=function(){
-        img.src=URL.createObjectURL(img.files[0])
-    }
-
-    addCards();
-    getCard();
 }
