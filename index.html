@@ -1,40 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href=
-    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-              rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-      <section class="container">
-        <div class="py-5 d-flex" id="parent" >
-        <div class="Cooking">
-          <div class="chef">
-            <h2 class="pt-4 fw-bold">
-              Cooking is delicious.<br />
-              Exceptional quality.<br />
-            </h2>
-            <img src="images/c1 1.png" width="300px" alt="" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQELA FOOD</title>
+    <link rel="icon" href="images/logo-head.png">
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css link -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar fixed-top navbar-expand-lg py-0" style="height: 45px;">
+        <div class="container">
+            <img class="navbar-brand me-auto" style="width: 80px" src="images/logo-black-food.png">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">WELCOME TO MQELA FOOD</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark mx-lg-2 mx-4" aria-current="page" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle mx-lg-2 mx-4 text-dark" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Recipes
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#add-recipe">Add recipe</a></li>
+                                <li><a class="dropdown-item" href="#">Must popular</a></li>
+                                <li><a class="dropdown-item" href="#">Must rated</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-lg-2 mx-4" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-lg-2 mx-4" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button href=""
+                class="login-button bg-dark text-light border border-0 px-3 py-2 rounded mx-4">Login</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- Slides Home -->
+    <section class="container d-flex justify-content-between">
+        <div class="menu-search d-flex justify-content-start flex-column mt-4 mx-5 bg-dark w-25 gy-5"
+            style="height: 95vh;">
+            <div class="messageBox">
+                <input required="" placeholder="Search recipe..." type="text" id="messageInput" />
+                <button id="sendButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                        <path fill="none"
+                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                        </path>
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67" stroke="#6c6c6c"
+                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <h1 id="title" class="title text-light text-center mb-4">Luxary</h1>
+            <div class="div-img">
+                <img id="big-img" class="img-slide" src="images/images/dish/2.png" alt="">
+            </div>
+        </div>
+        <div class="home-desc f-flex flex-column mx-5 my-5 text-center">
+            <h3 id="desc1" class="mt-4">Discover exquisite recipes crafted for royalty's refined palate.</h3>
+            <h4 id="desc2" class="mt-4">Indulge in culinary creations that combine opulence with unforgettable flavors.
+            </h4>
+            <h4 id="desc3" class="mt-4">Elevate your dining experience with our luxurious dishes that embody
+                sophistication decadence.</h4>
+            <div class="d-flex flex-row small-img">
+                <img id="luxary" onclick="myDish(this.src)" class="mx-4 mt-5" style="width: 150px; height: 150px;"
+                    src="images/images/dish/2.png" alt="">
+                <img id="healthy" onclick="myDish(this.src)" class="mx-4 mt-5" style="width: 150px; height: 150px;"
+                    src="images/images/dish/6.png" alt="">
+                <img id="delicious" onclick="myDish(this.src)" class="mx-4 mt-5" style="width: 150px; height: 150px;"
+                    src="images/images/dish/4.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Slides Home -->
+    <!-- info -->
+    <section class="container">
+        <div class="py-5 d-flex" id="parent">
+          <div class="Cooking">
+            <div class="chef">
+              <h2 class="pt-4 fw-bold">
+                Cooking is delicious.<br />
+                Exceptional quality.<br />
+              </h2>
+              <img src="images/c1 1.png" width="300px" alt="" />
+            </div>
+    
+            <div class="recipe py-5">
+              <h2>We provide delicious and wonderful recipes.</h2>
+              <p>
+                We're passionate about food from every corner of the globe.<br />
+                Our recipes blend classic comforts with innovative twists,<br />
+                reflecting the diverse tastes of our audience. Always exploring,<br />
+                always fresh.
+              </p>
+            </div>
           </div>
-        
-        <div class="recipe py-5">
-          <h2>We provide delicious and wonderful recipes.</h2>
-          <p>
-            We're passionate about food from every corner of the globe.<br />
-            Our recipes blend classic comforts with innovative twists,<br />
-            reflecting the diverse tastes of our audience. Always exploring,<br />
-            always fresh.
-          </p>
+          <div>
+            <img src="images/main-b 1.png" width="300px" class="food-image" />
+          </div>
         </div>
-        </div>
-        <div >
-          <img src="images/main-b 1.png" width="300px" class="food-image" />
-        </div>
-      </div>
       </section>
       <section class="why-us">
         <h1 class="pt-5 text-center text-white">Carte recipe</h1>
@@ -43,7 +135,7 @@
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/sweet.jpg" alt="" />
-                
+    
               </div>
               <div class="card-back">
                 <h5>Sweet Menu</h5>
@@ -61,12 +153,12 @@
               </div>
             </div>
           </div>
-  
+    
           <div class="card">
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/eventy1.jpg" alt="" />
-                
+    
               </div>
               <div class="card-back">
                 <h5>Savory Menu</h5>
@@ -83,12 +175,12 @@
               </div>
             </div>
           </div>
-  
+    
           <div class="card">
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/pasta.jpg" alt="" />
-               
+    
               </div>
               <div class="card-back">
                 <h5>Pasta Menu</h5>
@@ -103,13 +195,74 @@
                   <li>Key Lime Pie</li>
                   <li>Fruit Tart</li>
                 </ul>
-  
-                  
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-  </body>
+      <!-- end info -->
+    <div class="container mt-4 ">
+        <div class="recipe-container">
+
+            <h1 class="title title-top text-center m-5 ">Our Recipe</h1>
+            <div class="row row-cols-1 row-cols-md-3 gy-5" id="cont-card"></div>
+
+
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@getbootstrap" id="add-recipe">Add Recipe</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Recipe</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div id="myForm">
+                                <form class="form bg-body-secondary p-5 m-4">
+                                    <div class="row">
+                                        <div class="mb-3">
+                                            <label for="formFile" class="form-label">Choice image for Recette</label>
+                                            <input class="form-control" type="file" id="img-recette">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Enter Title of
+                                                Recette</label>
+                                            <input type="text" class="form-control" placeholder="Title"
+                                                id="title-recette">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1" class="form-label">Enter your
+                                                Description</label>
+                                            <textarea class="form-control" rows="3" id="descr-recette"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="send">Send message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JavaScript Link -->
+    <script src="script.js"></script>
+    <!-- JavaScript Link -->
+
+    <!-- bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap js link -->
+</body>
+
 </html>
