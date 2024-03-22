@@ -144,11 +144,11 @@ let cardHTML = "";
 
 for (let i = 0; i < ArryRecipes.length; i++) {
     cardHTML += `
-    <div class="col">
+    <div class="col" id="sr-card">
         <div class="card d-flex justify-content-center align-items-center mt-5">
             <img src="${ArryRecipes[i].photo}" alt="" class="card-img rounded-circle w-50">
             <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                <h4 class="card-title">${ArryRecipes[i].title}</h4>
+                <h4 id="card-title" class="card-title">${ArryRecipes[i].title}</h4>
                 <p class="card-text">${ArryRecipes[i].description}</p>
                 <div class="feedback">
                     <p><i class="fa-regular fa-heart text-start like-click" onclick="likesCount(this)"> <span class="like-count">0</span></i></p>
@@ -166,4 +166,21 @@ function likesCount(element){
     let likeCountSpan = element.querySelector('.like-count');
     let currentLikes = parseInt(likeCountSpan.textContent);
     likeCountSpan.textContent = currentLikes + 1;
+}
+
+function searchFunction() {
+    var input, search, srcard, cardtitle, a, txtValue;
+    input = document.getElementById("messageInput");
+    search = input.value.toUpperCase();
+    srcard =  document.getElementById("sr-card");
+    cardtitle =  document.getElementById("card-title");
+    for (i = 0; i < li.length; i++) {
+        a = srcard[i].cardtitle[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            srcard[i].style.display = "";
+        } else {
+            srcard[i].style.display = "none";
+        }
+    }
 }
