@@ -6,3 +6,11 @@
 body{
     background-color: #F2F2F2;
 }
+.about-img{
+    height: 50px;
+    width: auto;
+}
+.brands-img{
+    height: 150px;
+    width: auto;
+}
