@@ -75,7 +75,6 @@ function delicious(){
     desc3.innerText="Experience pure gastronomic joy with every bite." 
 }
 
-
 // let ArryRecipes = [
 //     {
 //         photo: "images/images/dish/2.png",
