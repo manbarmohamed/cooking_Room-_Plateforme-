@@ -212,3 +212,6 @@ h5{
   margin-top: 5%;
   font-weight: bold;
 }
+.hide{
+    display: none;
+}

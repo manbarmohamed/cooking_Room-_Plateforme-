@@ -98,7 +98,7 @@ let ArryRecipes = [
     {
         photo: "images/images/dish/2.png",
         title: "salade Perry",
-        description: "Salade nesoiase test de ca cord",
+        description: "Salade herry test de ca cord",
         likes: 30,
         comments: 10,
     },
@@ -144,11 +144,11 @@ let cardHTML = "";
 
 for (let i = 0; i < ArryRecipes.length; i++) {
     cardHTML += `
-    <div class="col" id="sr-card">
+    <div class="col card-search" data-index="${i}">
         <div class="card d-flex justify-content-center align-items-center mt-5">
             <img src="${ArryRecipes[i].photo}" alt="" class="card-img rounded-circle w-50">
             <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                <h4 id="card-title" class="card-title">${ArryRecipes[i].title}</h4>
+                <h4  class="card-title">${ArryRecipes[i].title}</h4>
                 <p class="card-text">${ArryRecipes[i].description}</p>
                 <div class="feedback">
                     <p><i class="fa-regular fa-heart text-start like-click" onclick="likesCount(this)"> <span class="like-count">0</span></i></p>
@@ -159,8 +159,23 @@ for (let i = 0; i < ArryRecipes.length; i++) {
     </div>`;
 }
 document.getElementById("cont-card").innerHTML = cardHTML;
+let cardElements = document.querySelectorAll('.card-search');
+    cardElements.forEach((element, index) => {
+        ArryRecipes[index].element = element;
+    });
 }
 getCard()
+
+
+let search = document.getElementById("search");
+search.addEventListener("input", e => {
+    let value = e.target.value.toLowerCase();
+    
+    ArryRecipes.forEach(card => {
+        let found = card.title.toLowerCase().includes(value) || card.description.toLowerCase().includes(value);
+        card.element.classList.toggle("hide", !found)
+    });
+});
 
 function likesCount(element){
     let likeCountSpan = element.querySelector('.like-count');
@@ -168,19 +183,19 @@ function likesCount(element){
     likeCountSpan.textContent = currentLikes + 1;
 }
 
-function searchFunction() {
-    var input, search, srcard, cardtitle, a, txtValue;
-    input = document.getElementById("messageInput");
-    search = input.value.toUpperCase();
-    srcard =  document.getElementById("sr-card");
-    cardtitle =  document.getElementById("card-title");
-    for (i = 0; i < li.length; i++) {
-        a = srcard[i].cardtitle[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            srcard[i].style.display = "";
+let search = document.getElementById("search");
+
+/*search.addEventListener("input", e => {
+    let value = e.target.value.trim().toLowerCase();
+
+    let cardElements = document.querySelectorAll('.col.card-search');
+    cardElements.forEach(element => {
+        let index = element.getAttribute('data-index');
+        let card = ArryRecipes[index];
+        if (card.title.toLowerCase().includes(value) || card.description.toLowerCase().includes(value)) {
+            element.classList.remove("hide");
         } else {
-            srcard[i].style.display = "none";
+            element.classList.add("hide");
         }
-    }
-}
+    });
+});*/
