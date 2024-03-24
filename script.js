@@ -183,9 +183,9 @@ function likesCount(element){
     likeCountSpan.textContent = currentLikes + 1;
 }
 
-let search = document.getElementById("search");
+/*let search = document.getElementById("search");
 
-/*search.addEventListener("input", e => {
+search.addEventListener("input", e => {
     let value = e.target.value.trim().toLowerCase();
 
     let cardElements = document.querySelectorAll('.col.card-search');
