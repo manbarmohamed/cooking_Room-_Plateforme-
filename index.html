@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body onload="paginationChange()">
     <!-- NavBar -->
     <nav class="navbar fixed-top navbar-expand-lg py-0" style="height: 45px;">
         <div class="container">
@@ -67,20 +67,7 @@
     <section class="container d-flex justify-content-between">
         <div class="menu-search d-flex justify-content-start flex-column mt-4 mx-5 bg-dark w-25 gy-5"
             style="height: 95vh;">
-            <div class="messageBox">
-                <input id="search" required="" placeholder="Search recipe..." type="text" id="messageInput" />
-                <button id="sendButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
-                        <path fill="none"
-                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
-                        </path>
-                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67" stroke="#6c6c6c"
-                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <h1 id="title" class="title text-light text-center mb-4">Luxary</h1>
+            <h1 id="title" class="title text-light text-center mb-4 mt-5">Luxary</h1>
             <div class="div-img">
                 <img id="big-img" class="img-slide" src="images/images/dish/2.png" alt="">
             </div>
@@ -203,7 +190,7 @@
       <section class="why-us">
         <h1 class="pt-5 text-center text-white">Carte recipe</h1>
         <div class="Tcard">
-          <div class="card">
+          <div class="card-zineb">
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/sweet.jpg" alt="" />
@@ -226,7 +213,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card-zineb">
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/eventy1.jpg" alt="" />
@@ -248,7 +235,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card-zineb">
             <div class="flip-card">
               <div class="card-front">
                 <img src="images/pasta.jpg" alt="" />
@@ -272,58 +259,583 @@
           </div>
         </div>
       </section>
-      <!-- end info -->
-    <div class="container mt-4 ">
-        <div class="recipe-container">
+          <!-- Recipes -->
+       <div class="container">
+      <div class="recipe-container mb-5">
+        <h1 class="title title-top text-center m-5">Our Recipe</h1>
 
-            <h1 class="title title-top text-center m-5 ">Our Recipe</h1>
-            <div class="row row-cols-1 row-cols-md-3 gy-5" id="cont-card"></div>
-
-
-            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap" id="add-recipe">Add Recipe</button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Recipe</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                            <div id="myForm">
-                                <form class="form bg-body-secondary p-5 m-4">
-                                    <div class="row">
-                                        <div class="mb-3">
-                                            <label for="formFile" class="form-label">Choice image for Recette</label>
-                                            <input class="form-control" type="file" id="img-recette">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Enter Title of
-                                                Recette</label>
-                                            <input type="text" class="form-control" placeholder="Title"
-                                                id="title-recette">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Enter your
-                                                Description</label>
-                                            <textarea class="form-control" rows="3" id="descr-recette"></textarea>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id="send">Send message</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="bar-search">
+            <div class="messageBox">
+                <input id="search" class="border-0" required="" placeholder="Search recipe..." type="text" id="messageInput" />
+                <button id="sendButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                        <path fill="none"
+                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                        </path>
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67" stroke="#6c6c6c"
+                            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                        </path>
+                    </svg>
+                </button>
             </div>
-
+          <div class="dropdown align-items-center">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Catégories
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item categorie"
+                  href="#"
+                  data-category="Salad"
+                  >Salad</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item categorie"
+                  href="#"
+                  data-category="Burger"
+                  >Burger</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item categorie"
+                  href="#"
+                  data-category="Fast Food"
+                  >Fast Food</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="row row-cols-1 row-cols-md-3 gy-5 mt-5" style="width: 100%;" id="cont-card"></div>
+
+        <div class="w3-center w3-padding-32">
+          <div class="w3-bar">
+            <a
+              href="#"
+              id="previous-button"
+              class="w3-bar-item w3-button w3-hover-black"
+              >&laquo;</a
+            >
+            <a
+              href="#"
+              class="page-link custom-page-link w3-bar-item w3-button"
+              onclick="changePage(this)"
+              >1</a
+            >
+            <a
+              href="#"
+              class="page-link custom-page-link w3-bar-item w3-button"
+              onclick="changePage(this)"
+              >2</a
+            >
+            <a
+              href="#"
+              class="page-link custom-page-link w3-bar-item w3-button"
+              onclick="changePage(this)"
+              >3</a
+            >
+            <a
+              href="#"
+              id="next-button"
+              class="w3-bar-item w3-button w3-hover-black"
+              >&raquo;</a
+            >
+          </div>
+        </div>
+
+        <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+        <button
+          type="button"
+          class="btn btn-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal1"
+          data-bs-whatever="@getbootstrap"
+          id="add-recipe"
+        >
+          Add Recipe
+        </button>
+        <div
+          class="modal"
+          id="exampleModal1"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Add Recipe
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+<div id="myForm">
+                  <form class="form bg-body-secondary p-5 m-4">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label"
+                        >Choice image for Recette</label
+                      >
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="img-recette"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Enter Title of Recette</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Title"
+                        id="title-recette"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="descr-recette"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                         <label for="recipeCategory" class="form-label">Catégorie:</label>
+                        <select class="form-select" id="cat" required>
+                            <option selected disabled>Sélectionner une catégorie</option>
+                            <option value="Salad">Salad</option>
+                            <option value="Burger">Burger</option>
+                            <option value="Fast Food">Fast Food</option>
+                        </select>
+                      
+                    </div>
+                     <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Ingredients</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="ingr"
+                      ></textarea>
+                    </div>
+                     <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Direction</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="direc"
+                      ></textarea>
+                    </div>
+                     <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Estimated Time</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="time"
+                      ></textarea>
+                    </div>
+                     <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Serving</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="serv"
+                      ></textarea>
+                    </div>
+                     <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Enter your Nutritional Value</label
+                      >
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        id="nt-value"
+                      ></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary" id="send">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- popuuuuuuuuuuuuuuuuuuup-->
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="img"></div>
+          <div class="title pop-title">
+            <h4>Pan Seared Salmon with Capers</h4>
+          </div>
+          <ul class="tab">
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="tablinks"
+                onclick="salmon(event, 'ingredients')"
+              >
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 50 50"
+                  style="
+                    enable-background: new 0 0 25 50;
+                    width: 50px;
+                    height: 50px;
+                  "
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #000000;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      class="st0"
+                      d="M24.6,12.2c1.5,0,2.9,0,4.4,0c0.7,0.3,1.3,0.6,1.4,1.4c0.1,0.6,0,1.3,0,1.9c0,0.2,0,0.4,0.1,0.6c1.6,1.9,2.1,4.1,1.8,6.5
+              c0,0.1,0.1,0.3,0.2,0.4c1,0.6,2.1,1.4,3.4,1.1c0,0,0,0,0,0c0.5,0,0.9,0.4,0.9,0.9c0,0.9,0,1.8,0,2.7c0,0.6-0.4,0.9-0.9,0.9
+              c-0.3,0-0.5,0-0.8,0c-0.2,0.7-0.3,1.3-0.5,1.9c-0.5,1.5-1,2.9-1.5,4.4c-0.3,0.9-0.5,1-1.4,1c-4.6,0-9.2,0-13.8,0
+              c-0.5,0-0.9-0.2-1.1-0.6c-0.1-0.2-0.2-0.4-0.3-0.7c-0.6-2-1.5-3.9-1.8-6c-0.7,0-1.4,0.1-1.8-0.7c0-1.1,0-2.2,0-3.3
+              c0.3-0.5,0.7-0.7,1.3-0.6c0.5,0,0.9,0,1.4,0c0-0.1,0-0.2,0-0.3c0.2-2.8,2.4-5.2,5.4-5.2c0.2,0,0.3-0.1,0.4-0.3
+              c0.4-0.8,0.8-1.5,1.3-2.2c0.2-0.3,0.3-0.5,0.3-0.8C23,13.9,23,12.8,24.6,12.2z M30.5,21.9c0-0.6,0.1-1,0-1.5
+              c-0.2-1.5-0.8-2.9-2.2-3.7c-0.6-0.3-0.7-1.3,0-1.5c0.6-0.2,0.5-0.6,0.4-1c-1.2,0-2.4,0-3.6,0c-0.1,0.5-0.1,0.8,0.4,1.1
+              c0.2,0.1,0.4,0.5,0.4,0.8c0,0.4-0.3,0.7-0.6,0.8c-1.1,0.4-1.5,1.3-1.8,2.2c0.6,0.4,1.2,0.8,1.8,1.2c0.6-0.8,1.3-0.6,2-0.1
+              C28.2,20.7,29.3,21.2,30.5,21.9z M17.7,24.1c0.7,0,1.4-0.1,2.1,0c0.8,0.1,1.4-0.2,1.9-0.8c0.6-0.7,1.3-1.3,2-1.9
+              c-0.9-1-2.5-1.3-3.8-0.7C18.6,21.2,17.7,22.6,17.7,24.1z M24,30.5c0,0.6,0,1.1,0,1.7c0,0.7,0.4,1,0.9,1c0.6,0,0.9-0.4,0.9-1.1
+              c0-1.1,0-2.2,0-3.3c0-0.7-0.4-1.1-0.9-1.1c-0.6,0-0.9,0.4-0.9,1.1C24,29.4,24,29.9,24,30.5z M20.4,30.5c0,0.6,0,1.1,0,1.7
+              c0,0,0,0.1,0,0.1c0,0.6,0.4,1,0.9,1c0.5,0,0.9-0.4,0.9-1c0-1.2,0-2.4,0-3.5c0-0.6-0.4-1-0.9-1c-0.5,0-0.9,0.4-0.9,1
+              C20.4,29.3,20.4,29.9,20.4,30.5z M29.5,30.5c0-0.5,0-1.1,0-1.6c0,0,0-0.1,0-0.1c0-0.6-0.4-1-0.9-1c-0.5,0-0.9,0.4-0.9,1
+              c0,1.2,0,2.3,0,3.5c0,0.6,0.4,1,0.9,1c0.5,0,0.9-0.4,0.9-1C29.5,31.6,29.5,31.1,29.5,30.5z M30.5,24.1C30.5,24.1,30.5,24,30.5,24.1
+              c-1.3-0.8-2.7-1.6-4-2.4c-0.1,0-0.3-0.1-0.3,0c-0.8,0.8-1.6,1.5-2.5,2.4C26,24.1,28.2,24.1,30.5,24.1z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="tablinks"
+                onclick="salmon(event, 'directions')"
+              >
+                <svg
+                  version="1.1"
+                  id="Layer_2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 50 50"
+                  style="
+                    enable-background: new 0 0 50 50;
+                    width: 50px;
+                    height: 50px;
+                  "
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #000000;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      class="st0"
+                      d="M13.4,26.9c-0.8-0.3-1.5-0.5-2.2-0.8c-1-0.4-1.5-1.2-1.2-2c0.3-0.8,1.2-1.1,2.2-0.8c1.2,0.3,1.3,0.5,1,1.8
+              c-0.5-0.2-1.1-0.3-1.6-0.5c0,0.1,0,0.1-0.1,0.2c0.7,0.3,1.4,0.5,2.4,0.9c-0.1-0.9-0.2-1.6-0.3-2.3c0-0.2-0.3-0.3-0.5-0.4
+              c-0.2-0.2-0.3-0.4-0.5-0.6c0.2-0.2,0.5-0.4,0.7-0.5c0.2-0.1,0.4,0,0.6,0c7.6,0,15.1,0,22.7,0c0.2,0,0.5,0,0.7,0
+              c0.2,0.1,0.4,0.3,0.4,0.4c0,0.2-0.2,0.5-0.3,0.6c-1.3,0.2-0.9,1.2-1,2c0,0.2,0,0.4,0.1,0.8c0.7-0.3,1.4-0.5,2.1-0.8
+              c0-0.1,0-0.1,0-0.2c-0.5,0.1-1,0.3-1.5,0.4c-0.5-0.8-0.3-1.3,0.6-1.6c0.2-0.1,0.5-0.1,0.7-0.2c0.9-0.1,1.6,0.3,1.9,1
+              c0.2,0.7-0.2,1.4-1.1,1.8c-0.7,0.3-1.4,0.5-2.2,0.8c0.2,0.7,0.4,1.4,0.6,2.1c0.9,3,0.2,5-2.4,6.8c-0.3,0.2-0.7,0.3-1,0.3
+              c-5.9,0-11.8,0-17.8,0c-0.3,0-0.7-0.1-1-0.3C12.6,34,11.9,32,12.7,29C12.9,28.3,13.1,27.7,13.4,26.9z M16,23.4c0.3,2-0.5,3.9-1,5.9
+              c-0.5,1.9,0.1,3.5,1.5,4.8c0.5,0.5,1,0.5,1.7,0.3c-0.4-0.3-0.6-0.6-0.9-0.8c-1.2-1.2-1.5-2.6-1.1-4.3c0.2-0.7,0.4-1.3,0.5-2
+              c0.1-1.1,0.2-2.3,0.2-3.5C16.9,23.4,16.6,23.2,16,23.4z"
+                    />
+                    <path
+                      class="st0"
+                      d="M36.6,21.1c-7.7,0-15.4,0-23.1,0c0.3-1.2,1-2,1.9-2.7c1.6-1.2,3.4-1.7,5.3-2.1c0.9-0.2,1.8-0.4,2.8-0.6
+              c-0.2-0.6-0.4-1-0.5-1.4c-0.3-0.8-0.1-1.4,0.8-1.7c1.1-0.5,2.2-0.5,3.3,0c0.8,0.4,1.1,1,0.8,1.8c-0.1,0.4-0.3,0.8-0.5,1.3
+              c0.8,0.2,1.5,0.4,2.2,0.6c2,0.4,4,1,5.6,2.3C35.7,19.2,36.4,19.9,36.6,21.1z M21.6,17c-1.9-0.1-5.4,1.6-6,3.1
+              c0.7,0.2,1.1-0.1,1.6-0.6c0.5-0.6,1.2-1,1.8-1.4C19.9,17.7,20.8,17.4,21.6,17z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="tablinks"
+                onclick="salmon(event, 'time')"
+              >
+                <svg
+                  version="1.1"
+                  id="Layer_3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 50 50"
+                  style="
+                    enable-background: new 0 0 50 50;
+                    width: 50px;
+                    height: 50px;
+                  "
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #000000;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      d="M25,12.2c6.6,0,12,5.4,12,12c0,6.6-5.4,12-12,12c-6.6,0-12-5.4-12-12C13,17.6,18.4,12.2,25,12.2z M29.4,15.8
+              c-1.2-0.6-2.4-1-3.8-1.1c0,0.4,0,0.7,0,1.1c0,0.5-0.2,0.8-0.6,0.8c-0.4,0-0.6-0.3-0.6-0.8c0-0.4,0-0.7,0-1.1
+              c-1.4,0.1-2.6,0.4-3.8,1.1c0.2,0.3,0.4,0.6,0.5,0.9c0,0.1,0,0.3-0.1,0.4c-0.1,0.1-0.3,0-0.4,0c-0.1,0-0.1-0.2-0.2-0.3
+              c-0.1-0.2-0.3-0.4-0.4-0.6c-1.1,0.7-2.1,1.6-2.8,2.7c0.3,0.2,0.7,0.4,1,0.6c0.4,0.2,0.5,0.6,0.3,0.9c-0.2,0.3-0.5,0.4-0.9,0.2
+              c-0.3-0.2-0.7-0.4-1-0.6c-0.6,1.2-0.9,2.5-1,3.8c0.3,0,0.6,0,0.9,0c0.2,0,0.4,0.1,0.4,0.3c0,0.3-0.2,0.4-0.5,0.4
+              c-0.3,0-0.6,0-0.9,0c0.1,1.4,0.4,2.6,1,3.8c0.2-0.1,0.3-0.2,0.5-0.3c0.2-0.1,0.3-0.2,0.5-0.3c0.4-0.2,0.8-0.2,1,0.2
+              c0.2,0.3,0.1,0.7-0.3,0.9c-0.3,0.2-0.6,0.4-1,0.6c0.8,1.1,1.7,2,2.9,2.8c0.1-0.3,0.3-0.5,0.4-0.7c0.1-0.2,0.3-0.4,0.6-0.3
+              c0.3,0.1,0.2,0.4,0,0.6c-0.1,0.2-0.3,0.5-0.4,0.8c1.2,0.6,2.4,1,3.7,1.1c0,0,0-0.1,0-0.1c0-0.3,0-0.7,0-1c0-0.5,0.2-0.8,0.6-0.8
+              c0.4,0,0.6,0.3,0.6,0.8c0,0.4,0,0.7,0,1.1c1.4-0.1,2.6-0.5,3.8-1.1c-0.2-0.3-0.4-0.6-0.5-0.9c0-0.1,0-0.3,0.1-0.4
+              c0.1-0.1,0.3,0,0.4,0c0.1,0,0.1,0.2,0.2,0.3c0.1,0.2,0.3,0.4,0.4,0.6c1.1-0.7,2.1-1.6,2.8-2.7c-0.3-0.2-0.6-0.4-0.9-0.5
+              c-0.4-0.2-0.5-0.6-0.3-0.9c0.2-0.3,0.6-0.4,1-0.2c0.3,0.2,0.6,0.4,0.9,0.5c0.6-1.2,0.9-2.5,1-3.9c-0.3,0-0.6,0-0.9,0
+              c-0.3,0-0.5-0.1-0.5-0.3c0-0.3,0.2-0.4,0.5-0.3c0.3,0,0.6,0,0.9,0c-0.1-1.4-0.4-2.6-1-3.8c-0.3,0.2-0.6,0.4-1,0.5
+              c-0.4,0.2-0.8,0.2-1-0.2c-0.2-0.3-0.1-0.7,0.3-0.9c0.3-0.2,0.6-0.4,1-0.6c-0.8-1.1-1.7-2-2.8-2.8c-0.1,0.3-0.3,0.5-0.4,0.8
+              c-0.1,0.2-0.3,0.4-0.5,0.2c-0.2-0.1-0.2-0.3-0.1-0.5C29.1,16.3,29.3,16.1,29.4,15.8z"
+                    />
+                    <path
+                      d="M25,25.5c-0.5,0-1-0.3-1.2-0.8c-0.1-0.1-0.2-0.3-0.3-0.4c-1.2-0.7-2.5-1.4-3.7-2.1c-0.3-0.2-0.5-0.3-0.5-0.7
+              c-0.1-0.6,0.5-1,1-0.8c0.1,0,0.2,0.1,0.4,0.2c1.2,0.7,2.4,1.3,3.6,2c0.1,0.1,0.3,0.1,0.5,0.1c0.2,0,0.5,0,0.7,0
+              c0.2,0,0.3,0,0.5-0.1c1.2-0.7,2.4-1.4,3.7-2c0.2-0.1,0.3-0.2,0.5-0.2c0.4,0,0.7,0.2,0.8,0.6c0.1,0.3,0,0.7-0.4,0.9
+              c-0.7,0.4-1.4,0.8-2.1,1.1c-0.6,0.3-1.2,0.7-1.8,1c-0.1,0.1-0.2,0.2-0.3,0.4C26.1,25.2,25.6,25.5,25,25.5z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="tablinks"
+                onclick="salmon(event, 'serving')"
+              >
+                <svg
+                  version="1.1"
+                  id="Layer_4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 50 50"
+                  style="
+                    enable-background: new 0 0 50 50;
+                    width: 50px;
+                    height: 50px;
+                  "
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #000000;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      d="M24.2,12.2c0.5,0,1.1,0,1.6,0c0.4,0.1,0.8,0.1,1.1,0.2c3.3,0.6,5.9,2.2,7.8,4.9c0.3,0.4,0.2,0.6-0.2,0.9
+              c-3.1,1.8-6.1,3.5-9.2,5.3c-0.3,0.1-0.5,0.2-0.8,0.2c-3,0-6,0-9,0c-0.6,0-1.3,0-1.9,0c-0.4,0-0.6-0.2-0.5-0.5
+              c0.2-2,0.8-3.9,1.9-5.6c1.9-2.8,4.5-4.5,7.8-5.1C23.3,12.3,23.7,12.3,24.2,12.2z"
+                    />
+                    <path
+                      d="M36.9,24.5c-0.1,3.1-1.3,5.8-3.6,8.1c-0.3,0.3-0.5,0.3-0.8,0c-2.2-2.6-4.4-5.3-6.6-7.9c-0.3-0.3-0.2-0.6,0.1-0.8
+              c3-1.7,5.9-3.4,8.9-5.1c0.4-0.2,0.6-0.1,0.8,0.3C36.5,20.7,36.9,22.5,36.9,24.5z"
+                    />
+                    <path
+                      d="M18.7,24.4c1.7,0,3.3,0,5,0c0.5,0,0.7,0.3,0.5,0.8c-1.2,3.1-2.3,6.3-3.4,9.4c-0.1,0.4-0.4,0.5-0.8,0.3
+              c-3.6-1.8-5.8-4.6-6.7-8.5c-0.1-0.4-0.1-0.9-0.2-1.4c0-0.4,0.1-0.6,0.6-0.6C15.3,24.4,17,24.4,18.7,24.4z"
+                    />
+                    <path
+                      d="M25,36c-1.1,0-2.1-0.2-3.2-0.4c-0.4-0.1-0.5-0.3-0.4-0.8c1.1-3,2.2-6.1,3.3-9.1c0.2-0.5,0.6-0.6,0.9-0.2
+              c1.6,2,3.3,3.9,4.9,5.9c0.4,0.5,0.9,1.1,1.3,1.6c0.3,0.3,0.2,0.6-0.1,0.8c-1.8,1.2-3.7,2-5.9,2.1C25.6,36,25.3,36,25,36z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="tablinks"
+                onclick="salmon(event, 'nutrition')"
+              >
+                <svg
+                  version="1.1"
+                  id="Layer_5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 50 50"
+                  style="
+                    enable-background: new 0 0 50 50;
+                    width: 50px;
+                    height: 50px;
+                  "
+                  xml:space="preserve"
+                >
+                  <style type="text/css">
+                    .st0 {
+                      fill: #000000;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      d="M28.3,36c-2.2,0-4.4,0-6.6,0c0-0.6,0-1.2,0-1.7c0-7,0-14,0-20.9c0-0.1,0-0.2,0-0.3c0-0.5,0.3-0.8,0.8-0.8
+              c1.7,0,3.4,0,5.1,0c0.5,0,0.8,0.3,0.8,0.9c0,1.6,0,3.3,0,4.9c0,5.9,0,11.7,0,17.6C28.3,35.7,28.3,35.8,28.3,36z"
+                    />
+                    <path
+                      d="M37.1,36c-0.1,0-0.2,0-0.3,0c-2,0-4,0-6,0c-0.3,0-0.4-0.1-0.4-0.4c0-4.6,0-9.2,0-13.9c0-0.7,0.3-1,0.9-1c1.6,0,3.2,0,4.8,0
+              c0.6,0,0.9,0.3,0.9,0.9c0,4.6,0,9.2,0,13.8C37.1,35.7,37.1,35.8,37.1,36z"
+                    />
+                    <path
+                      d="M12.9,36c0-0.9,0-1.8,0-2.7c0-2.3,0-4.6,0-6.9c0-0.7,0.3-0.9,0.9-0.9c1.6,0,3.2,0,4.9,0c0.6,0,0.9,0.3,0.9,0.9
+              c0,1.7,0,3.4,0,5.1c0,1.4,0,2.8,0,4.2c0,0.3,0,0.4-0.3,0.4c-2,0-4,0-6,0C13.1,36,13,36,12.9,36z"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div id="ingredients" class="tabcontent">
+            <!-- <h3>Ingredients</h3>
+            <ul>
+              <li>4 (6 ounce) fillets</li>
+              <li>salmon 2 tablespoons olive oil</li>
+              <li>2 tablespoons capers</li>
+              <li>1/8 teaspoon salt</li>
+              <li>1/8 teaspoon ground black pepper</li>
+              <li>4 slices lemon</li>
+            </ul> -->
+          </div>
+          <div id="directions" class="tabcontent">
+            <!-- <h3>Directions</h3>
+            <p>
+              Preheat a large heavy skillet over medium heat for 3 minutes.
+              <br />
+              <br />
+              Coat salmon with olive oil. Place in skillet, and increase heat to
+              high. Cook for 3 minutes. Sprinkle with capers, and salt and
+              pepper. Turn salmon over, and cook for 5 minutes, or until
+              browned. Salmon is done when it flakes easily with a fork.<br />
+              <br />
+              Transfer salmon to individual plates, and garnish with lemon
+              slices.
+            </p> -->
+          </div>
+          <div id="time" class="tabcontent">
+            <!-- <h3>Esimated Time</h3>
+            <ul>
+              <li>10m preparation time</li>
+              <li>10m cooking time</li>
+              <li>20m total</li>
+            </ul> -->
+          </div>
+          <div id="serving" class="tabcontent">
+            <!--  <h3>Servings</h3>
+            <p>
+              This specific recipe serves up to four people. Adjust it
+              accordingly to suit the specific needs of your party.
+            </p> -->
+          </div>
+          <div id="nutrition" class="tabcontent">
+            <!-- <h3>Nutritional Value</h3>
+            <p><i>Based on a 2000 calorie diet</i></p>
+            <ul>
+              <li>Calories: 371 kcal 19%</li>
+              <li>Fat: 25.1 g 39%</li>
+              <li>Carbs: 1.7g 1%</li>
+              <li>Protein: 33.7 g 67%</li>
+              <li>Cholesterol: 99 mg 33%</li>
+              <li>Sodium: 300 mg 12%</li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end popuuuuuuuuuuuuuuuuuuup -->
+        <!-- Slides -->
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
         <button
@@ -431,6 +943,44 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+      <!-- FOOTER STARTS HERE -->
+  <footer class="footer py-4 bg-dark text-white">
+    <div id="footer-content" class="container">
+      <img src="logo-white-food.webp" alt="" style="width: 15%; height: 15%;">
+      <div class="logo">
+      </div>
+      <div class="g1">
+        <h3>About</h3>
+        <h3>Contact</h3>
+        <h3>Terms of Service</h3>
+      </div>
+      <div class="g2">
+        <h3>Privacy Policy</h3>
+        <h3>FAQ</h3>
+        <h3>Shipping Information</h3>
+      </div>
+      <div class="g3">
+        <h3>Return Policy</h3>
+        <h3>Support</h3>
+        <h3>Feedback</h3>
+      </div>
+      <div class="g4">
+        <h3></h3>
+        <h3></h3>
+        <h3></h3>
+      </div>
+    </div>
+    <div class="icons">
+      <img src="facebook.png" alt="Facebook" />
+      <img src="instagram.png" alt="Instagram" />
+      <img src="twitter.png" alt="Twitter" />
+      <img src="youtube.png" alt="YouTube" />
+    </div>
+    <div style="text-align: center;">
+      <span>&copy; 2024 MQELA Company. All rights reserved.</span>
+    </div>
+  </footer>
+  <!-- FOOTER ENDS HERE -->
     <!-- JavaScript Link -->
     <script src="script.js"></script>
     <!-- JavaScript Link -->

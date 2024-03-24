@@ -31,7 +31,6 @@ nav{
 }
 
 .messageBox {
-    margin: 25px 0px 15px 15px;
     width: fit-content;
     height: 40px;
     display: flex;
@@ -128,6 +127,7 @@ nav{
  
   /* Card */
   
+  
   .why-us {
     background: url(images/Bg.png) no-repeat top right/cover;
     width: 100%;
@@ -144,17 +144,17 @@ nav{
     justify-content: space-around;
     gap: 5px;
     margin-top: 13%;
-    
+
   }
-  
-  .card {
+
+  .card-zineb {
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 1000px;
     border-radius: 5%;
   }
-  
+
   .flip-card {
     position: relative;
     width: 100%;
@@ -165,11 +165,11 @@ nav{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5%;
   }
-  
-  .card:hover .flip-card {
+
+  .card-zineb:hover .flip-card {
     transform: rotateY(180deg);
   }
-  
+
   .card-front,
   .card-back {
     position: absolute;
@@ -184,7 +184,7 @@ nav{
     object-fit: cover;
     border-radius: 5%;
   }
-  
+
   .card-back {
     background-color: #ebe9e6;
     color: rgb(13, 13, 13);
@@ -252,4 +252,175 @@ h5{
     text-align: center;
     margin-top: 10%;
     font-weight: bolder;
+}
+.feedback {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-img {
+  margin-top: -75px;
+}
+.w3-center .w3-bar {
+  display: inline-flex;
+  width: auto;
+  flex-direction: row;
+  gap: 20px;
+  margin: 10px;
+}
+
+.bar-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 400px;
+}
+.recipe-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  column-gap: 20px;
+}
+.container-rate {
+  position: relative;
+  width: 400px;
+  background: #fefefe;
+  padding: 20px 30px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .post {
+  display: none;
+}
+.container .text {
+  font-size: 25px;
+  color: #000000;
+  font-weight: 500;
+}
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #0a0a0a;
+  font-weight: 500;
+  cursor: pointer;
+}
+.container .edit:hover {
+  text-decoration: underline;
+}
+.container .star-widget input {
+  display: none;
+}
+.star-widget label {
+  font-size: 40px;
+  color: #000000;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+  color: #fd4;
+}
+input:checked ~ label {
+  color: #fd4;
+}
+input#rate-5:checked ~ label {
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ .form-rate header:before {
+  content: "I just hate it ";
+}
+#rate-2:checked ~ .form-rate header:before {
+  content: "I don't like it ";
+}
+#rate-3:checked ~ .form-rate header:before {
+  content: "It is awesome ";
+}
+#rate-4:checked ~ .form-rate header:before {
+  content: "I just like it ";
+}
+#rate-5:checked ~ .form-rate header:before {
+  content: "I just love it ";
+}
+.container .form-rate {
+  display: none;
+}
+input:checked ~ .form-rate {
+  display: block;
+}
+.form-rate header {
+  width: 100%;
+  font-size: 25px;
+  color: #fe7;
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.form-rate .textarea {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+.form-rate .textarea textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #000000;
+  border: 1px solid #333;
+  background: #ffffff;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus {
+  border-color: #444;
+}
+.form-rate .btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+.form-rate .btn button {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #444;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form-rate .btn button:hover {
+  background: #f4acac;
+}
+.footer h3{
+    font-size: 15px;
+}
+#footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-bottom: 4%;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 1%; justify-content:
+    center;
+    margin-bottom: 2%;
 }
