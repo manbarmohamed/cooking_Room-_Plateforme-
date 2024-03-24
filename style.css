@@ -1,0 +1,14 @@
+#footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-bottom: 4%;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 1%; justify-content:
+    center;
+    margin-bottom: 2%;
+}
