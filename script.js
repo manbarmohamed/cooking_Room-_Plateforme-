@@ -1,44 +1,44 @@
-let bigImage=document.getElementById('big-img');
+let bigImage = document.getElementById('big-img');
 
 function myDish(dish) {
-    bigImage.src = dish;
-    if (dish === healthyimg.src) {
-        healthy();
-    }
-    if (dish === luxaryimg.src) {
-        luxary();
-    }
-    if (dish === deliciousimg.src) {
-        delicious();
-    }
+  bigImage.src = dish;
+  if (dish === healthyimg.src) {
+    healthy();
+  }
+  if (dish === luxaryimg.src) {
+    luxary();
+  }
+  if (dish === deliciousimg.src) {
+    delicious();
+  }
 }
-let healthyimg=document.getElementById("healthy")
-let luxaryimg=document.getElementById("luxary")
-let deliciousimg=document.getElementById("delicious")
-let title=document.getElementById("title")
-let desc1=document.getElementById("desc1")
-let desc2=document.getElementById("desc2")
-let desc3=document.getElementById("desc3")
+let healthyimg = document.getElementById("healthy")
+let luxaryimg = document.getElementById("luxary")
+let deliciousimg = document.getElementById("delicious")
+let title = document.getElementById("title")
+let desc1 = document.getElementById("desc1")
+let desc2 = document.getElementById("desc2")
+let desc3 = document.getElementById("desc3")
 
-function healthy(){
-    title.innerText="Healthy"
-    desc1.innerText="Embrace a nutritious and wholesome culinary journey."
-    desc2.innerText="Our healthy recipes are carefully crafted to nourish your body while tantalizing your taste buds."
-    desc3.innerText="Explore a world of vibrant ingredients and balanced flavors that promote well-being and vitality."
-}
-
-function luxary(){
-    title.innerText="Luxary"
-    desc1.innerText="Discover exquisite recipes crafted for royalty's refined palate."
-    desc2.innerText="Indulge in culinary creations that combine opulence with unforgettable flavors. "
-    desc3.innerText="Elevate your dining experience with our luxurious dishes that embody sophistication decadence."
+function healthy() {
+  title.innerText = "Healthy"
+  desc1.innerText = "Embrace a nutritious and wholesome culinary journey."
+  desc2.innerText = "Our healthy recipes are carefully crafted to nourish your body while tantalizing your taste buds."
+  desc3.innerText = "Explore a world of vibrant ingredients and balanced flavors that promote well-being and vitality."
 }
 
-function delicious(){
-    title.innerText="Delicious"
-    desc1.innerText="Dive into a paradise of delightful flavors and culinary delights."
-    desc2.innerText="Our delicious recipes are a celebration of taste and pleasure, offering a symphony of aromas and textures that will leave you craving for more."
-    desc3.innerText="Experience pure gastronomic joy with every bite."
+function luxary() {
+  title.innerText = "Luxary"
+  desc1.innerText = "Discover exquisite recipes crafted for royalty's refined palate."
+  desc2.innerText = "Indulge in culinary creations that combine opulence with unforgettable flavors. "
+  desc3.innerText = "Elevate your dining experience with our luxurious dishes that embody sophistication decadence."
+}
+
+function delicious() {
+  title.innerText = "Delicious"
+  desc1.innerText = "Dive into a paradise of delightful flavors and culinary delights."
+  desc2.innerText = "Our delicious recipes are a celebration of taste and pleasure, offering a symphony of aromas and textures that will leave you craving for more."
+  desc3.innerText = "Experience pure gastronomic joy with every bite."
 }
 
 let ArryRecipes = [
@@ -121,15 +121,15 @@ let ArryRecipes = [
     nat_value: "-100kcal -25.6g -23g ",
   },
 ];
-function getCard(recipes){
+function getCard(recipes) {
 
-let cardHTML = "";
+  let cardHTML = "";
 
-for (let i = 0; i < recipes.length; i++) {
+  for (let i = 0; i < recipes.length; i++) {
     cardHTML += `
     <div class="col card-search" data-index="${i}">
-        <div class="card d-flex justify-content-center align-items-center mt-5">
-            <img onclick="ingredient(this.src)" src="${recipes[i].photo}" alt="" class="card-img rounded-circle w-75">
+        <div class="card d-flex justify-content-center align-items-center mt-5 rounded-4">
+            <img onclick="ingredient(${i})" src="${recipes[i].photo}" alt="" class="card-img rounded-circle w-75">
             <div class="card-body d-flex justify-content-center align-items-center flex-column" style="width: 80%;">
                 <h4 class="card-title">${recipes[i].title}</h4>
                 <p class="card-text">${recipes[i].description}</p>
@@ -170,7 +170,7 @@ for (let i = 0; i < recipes.length; i++) {
                     <textarea cols="30" placeholder="Describe your experience.."></textarea>
                   </div>
                   <div class="btn">
-                    <button type="button" onclick="commentsCount(event, this)" id="submit">Post</button>
+                    <button type="button" onclick="commentsCount(event)" id="submit">Post</button>
 
                   </div>
                 </form>
@@ -184,29 +184,30 @@ for (let i = 0; i < recipes.length; i++) {
             </div>
         </div>
     </div>`;
-}
-document.getElementById("cont-card").innerHTML = cardHTML;
-let cardElements = document.querySelectorAll('.card-search');
-    cardElements.forEach((element, index) => {
-        ArryRecipes[index].element = element;
-    });
+  }
+  document.getElementById("cont-card").innerHTML = cardHTML;
+  let cardElements = document.querySelectorAll('.card-search');
+  cardElements.forEach((element, index) => {
+    ArryRecipes[index].element = element;
+  });
 }
 //getCard()
 
 
 let search = document.getElementById("search");
 search.addEventListener("input", e => {
-    let value = e.target.value.toLowerCase();
-    
-    ArryRecipes.forEach(card => {
-        let found = card.title.toLowerCase().includes(value) || card.description.toLowerCase().includes(value);
-        card.element.classList.toggle("hide", !found)
-    });
+  let value = e.target.value.toLowerCase();
+  ArryRecipes.forEach(card => {
+    let found = card.title.toLowerCase().includes(value) || card.description.toLowerCase().includes(value);
+    card.element.classList.toggle("hide", !found)
+  });
 });
 
 /*let search = document.getElementById("search");
 
-search.addEventListener("input", e => {
+let search = document.getElementById("search");
+
+/*search.addEventListener("input", e => {
     let value = e.target.value.trim().toLowerCase();
 
     let cardElements = document.querySelectorAll('.col.card-search');
@@ -225,14 +226,14 @@ function likesCount(element) {
   let currentLikes = parseInt(likeCountSpan.textContent);
   likeCountSpan.textContent = currentLikes + 1;
 }
-function commentsCount(event, buttonElement) {
-    event.preventDefault(); 
-    let commentCountElement = document.getElementById('comment-count-1');
-    if (commentCountElement) {
-        let currentComments = parseInt(commentCountElement.textContent);        
-        let newComments = currentComments + 1;
-        commentCountElement.textContent = newComments;
-    } 
+function commentsCount(event) {
+  event.preventDefault();
+  let commentCountElement = document.getElementById('comment-count-1');
+  if (commentCountElement) {
+    let currentComments = parseInt(commentCountElement.textContent);
+    let newComments = currentComments + 1;
+    commentCountElement.textContent = newComments;
+  }
 }
 
 
@@ -244,7 +245,7 @@ function commentsCount(event, buttonElement) {
 }*/
 
 
-let submit=document.getElementById("submit")
+let submit = document.getElementById("submit")
 let img = document.getElementById("img-recette")
 let titlerecette = document.getElementById("title-recette")
 let descriptionR = document.getElementById("descr-recette")
@@ -279,14 +280,14 @@ function addCards() {
 }
 
 document.getElementById("send").onclick = function () {
-    // document.getElementById("cont-card").innerHTML ="";
+  // document.getElementById("cont-card").innerHTML ="";
 
-    img.onchange = function () {
-        img.src = URL.createObjectURL(img.files[0])
-    }
+  img.onchange = function () {
+    img.src = URL.createObjectURL(img.files[0])
+  }
 
-    addCards();
-    paginationChange();
+  addCards();
+  paginationChange();
 }
 
 
@@ -297,63 +298,63 @@ document.getElementById("send").onclick = function () {
 
 
 function paginate(array, page_size, page_number) {
-    return array.slice((page_number - 1) * page_size, page_number * page_size);
+  return array.slice((page_number - 1) * page_size, page_number * page_size);
 }
 
 // Fonction pour afficher les recettes
 function paginationChange() {
-    document.addEventListener("DOMContentLoaded", function () {
-        const PAGE_SIZE = 3;
-        let currentPage = 1;
-        getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage))
-        // console.log(currentPage);
-        const paginationLinks = document.querySelectorAll(".page-link");
-        paginationLinks.forEach(link => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                const pageNumber = parseInt(e.target.innerText);
-                if (!isNaN(pageNumber)) {
-                    currentPage = pageNumber;
-                    getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
-                }
-            });
-        });
-
-        document.getElementById("previous-button").addEventListener("click", function (e) {
-            e.preventDefault();
-            if (currentPage > 1) {
-                currentPage--;
-                getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
-            }
-        });
-
-        document.getElementById("next-button").addEventListener("click", function (e) {
-            e.preventDefault();
-            const totalPages = Math.ceil(ArryRecipes.length / PAGE_SIZE);
-            if (currentPage < totalPages) {
-                currentPage++;
-                getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
-            }
-        });
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const PAGE_SIZE = 3;
+    let currentPage = 1;
+    getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage))
+    // console.log(currentPage);
+    const paginationLinks = document.querySelectorAll(".page-link");
+    paginationLinks.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const pageNumber = parseInt(e.target.innerText);
+        if (!isNaN(pageNumber)) {
+          currentPage = pageNumber;
+          getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
+        }
+      });
     });
+
+    document.getElementById("previous-button").addEventListener("click", function (e) {
+      e.preventDefault();
+      if (currentPage > 1) {
+        currentPage--;
+        getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
+      }
+    });
+
+    document.getElementById("next-button").addEventListener("click", function (e) {
+      e.preventDefault();
+      const totalPages = Math.ceil(ArryRecipes.length / PAGE_SIZE);
+      if (currentPage < totalPages) {
+        currentPage++;
+        getCard(paginate(ArryRecipes, PAGE_SIZE, currentPage));
+      }
+    });
+
+  });
 
 }
 paginationChange()
 
 
 function filtreByCategorie(categore) {
-    let filtreCard = ArryRecipes.filter(Arr => Arr.categorie === categore)
-    getCard(filtreCard)
+  let filtreCard = ArryRecipes.filter(Arr => Arr.categorie === categore)
+  getCard(filtreCard)
 }
 
 const catlink = document.querySelectorAll(".categorie")
 catlink.forEach(link => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const cate = e.target.dataset.category;
-        filtreByCategorie(cate)
-    })
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const cate = e.target.dataset.category;
+    filtreByCategorie(cate)
+  })
 })
 
 
@@ -365,13 +366,13 @@ const post = document.querySelector(".post");
 const widget = document.querySelector(".star-widget");
 const editBtn = document.querySelector(".edit");
 btn.onclick = () => {
-    widget.style.display = "none";
-    post.style.display = "block";
-    editBtn.onclick = () => {
-        widget.style.display = "block";
-        post.style.display = "none";
-    }
-    return false;
+  widget.style.display = "none";
+  post.style.display = "block";
+  editBtn.onclick = () => {
+    widget.style.display = "block";
+    post.style.display = "none";
+  }
+  return false;
 }
 // ------------popuuuuuuuuuuuuuuuuuuuuuuuup---------------
 // Fonction pour afficher les détails du produit dans la modale
@@ -380,50 +381,35 @@ function showProductDetails(
   directionsTab,
   timeTab,
   servingTab,
-  nutritionTab
+  nutritionTab,
+  i
 ) {
-  for (let j = 0; j < ArryRecipes.length; j++) {
+  // for (let j = 0; j < recipe.length; j++) {
     // Mettre à jour les éléments de la modale avec les détails du produit
-    ingredientsTab.innerHTML = `
-      <h3>Ingredients</h3>
-      <p>${ArryRecipes[j].ingredient} ${ArryRecipes[j].direction}</p>
-    `;
+    ingredientsTab.innerHTML =
+      `<h3>Ingredients</h3>
+      <p>${ArryRecipes[i].ingredient}</p>`
+      ;
 
-    directionsTab.innerHTML = `
-      <h3>Directions</h3>
+    directionsTab.innerHTML =
+      `<h3>Directions</h3>
       <p>
-        ${ArryRecipes[j].direction}
+        ${ArryRecipes[i].direction}
       </p>
     `;
 
-    timeTab.innerHTML = `
-      <h3>Estimated Time</h3>
-      <p>${ArryRecipes[j].time}</p>
-    `;
-
-    servingTab.innerHTML = `
-      <h3>Servings</h3>
-      <p>${ArryRecipes[j].serving}</p>
-    `;
-
-    nutritionTab.innerHTML = `
-      <h3>Nutritional Value</h3>
-      <p><i>Based on a 2000 calorie diet</i></p>
-      <p>${ArryRecipes[j].nat_value}</p>
-    `;
-  }
+    timeTab.innerHTML = `<h3>Estimated Time</h3><p>${ArryRecipes[i].time}</p>`;
+    servingTab.innerHTML = `<h3>Servings</h3>     <p>${ArryRecipes[i].serving}</p>`;
+    nutritionTab.innerHTML = `<h3>Nutritional Value</h3><p><i>Based on a 2000 calorie diet</i></p>    <p>${ArryRecipes[i].nat_value}</p>`;
+  
   // Afficher la modale
-  let productModal = document.getElementById("productModal");
-  if (productModal) {
-    productModal.classList.add("show");
-  }
+  $("#productModal").modal("show");
 }
-
-function ingredient(img) {
+function ingredient(i) {
   // showProductDetails()
   let ingredientsTab = document.getElementById("ingredients");
   let directionsTab = document.getElementById("directions");
-  let timeTab = document.getElementById("time");
+  let timeTab = document.getElementById("time-ing");
   let servingTab = document.getElementById("serving");
   let nutritionTab = document.getElementById("nutrition");
   // Afficher les détails du produit dans la modale
@@ -432,43 +418,17 @@ function ingredient(img) {
     directionsTab,
     timeTab,
     servingTab,
-    nutritionTab
+    nutritionTab,
+    i
   );
 }
 
-
-// Ajouter un gestionnaire d'événement de clic pour chaque colonne
-// let columns = document.querySelectorAll("#card-img");
-
-// columns.forEach(column => {
-//   column.addEventListener("click", function () {
-//     console.log("ffggg")
-//     // Récupérer les détails du produit à partir des attributs data-* de la colonne
-//     let ingredientsTab = document.getElementById("ingredients");
-//     let directionsTab = document.getElementById("directions");
-//     let timeTab = document.getElementById("time");
-//     let servingTab = document.getElementById("serving");
-//     let nutritionTab = document.getElementById("nutrition");
-
-//     // Afficher les détails du produit dans la modale
-//     showProductDetails(
-//       ingredientsTab,
-//       directionsTab,
-//       timeTab,
-//       servingTab,
-//       nutritionTab
-//     );
-//   });
-// });
-// -----------------
 function salmon(evt, recipe) {
   var i, tabcontent, tablinks;
-
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -477,4 +437,3 @@ function salmon(evt, recipe) {
   document.getElementById(recipe).style.display = "block";
   evt.currentTarget.className += " active";
 }
-// ----------- end popuuuuuuuuuuuuuuuuuuuuuup-------
